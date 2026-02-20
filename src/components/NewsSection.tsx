@@ -12,7 +12,7 @@ export default function NewsSection() {
       category: 'أخبار الجمعية',
       date: '15 أكتوبر 2026',
       author: 'إدارة الإعلام',
-      image: 'https://images.unsplash.com/photo-1552674605-15c2145eba11?q=80&w=2670&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2670&auto=format&fit=crop',
       summary: 'في أجواء مليئة بالحماس والروح الرياضية، انطلق ماراثون الطائف السنوي الذي تنظمه الجمعية برعاية أمانة الطائف ووزارة الرياضة.',
     },
     {
