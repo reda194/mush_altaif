@@ -1,14 +1,19 @@
 import type { Metadata, Viewport } from 'next';
-import { Cairo } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Providers from '@/components/Providers';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const cairo = Cairo({
-  subsets: ['arabic'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-cairo',
+const graphikArabic = localFont({
+  src: [
+    { path: '../../public/fonts/GraphikArabic-Light.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/GraphikArabic-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/GraphikArabic-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/GraphikArabic-Semibold.ttf', weight: '600', style: 'normal' },
+    { path: '../../public/fonts/GraphikArabic-Bold.ttf', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -29,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={cairo.variable}>
-      <body className="antialiased flex flex-col min-h-screen">
+    <html lang="ar" dir="rtl">
+      <body className={`${graphikArabic.className} antialiased flex flex-col min-h-screen`}>
         <Providers>
           <Header />
           <div className="flex-grow">
