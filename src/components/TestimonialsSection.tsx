@@ -30,17 +30,17 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 bg-surface relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+    <section className="py-16 md:py-24 bg-surface relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 max-w-2xl mx-auto">
           <span className="text-brand font-bold tracking-wider text-sm uppercase mb-4 block">آراء المجتمع</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-4">قصص نجاح تلهمنا</h2>
-          <p className="text-charcoal/60 text-lg">
+          <h2 className="text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-3 md:mb-4">قصص نجاح تلهمنا</h2>
+          <p className="text-charcoal/60 text-base md:text-lg">
             نفخر بكوننا جزءاً من التغيير الإيجابي في حياة أعضائنا. إليك ما يقولونه عن تجربتهم الفعّالة معنا.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
           {testimonials.map((item, index) => (
             <motion.div
               key={item.id}
@@ -48,11 +48,11 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="bg-white rounded-3xl p-8 border border-surface-dark relative shadow-xl shadow-brand/5 hover:-translate-y-2 transition-transform duration-300"
+              className="min-w-[88%] md:min-w-0 shrink-0 snap-start bg-white rounded-3xl p-6 md:p-8 border border-surface-dark relative shadow-xl shadow-brand/5 hover:-translate-y-2 transition-transform duration-300"
             >
               <Quote className="absolute top-6 left-6 text-brand/20 w-12 h-12" />
               
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-5 md:mb-6">
                 <img 
                   src={item.avatar} 
                   alt={item.name} 
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               
-              <p className="text-charcoal/70 leading-relaxed relative z-10">
+              <p className="text-charcoal/70 leading-relaxed relative z-10 text-sm md:text-base">
                 &quot;{item.text}&quot;
               </p>
             </motion.div>

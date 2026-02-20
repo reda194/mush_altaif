@@ -43,31 +43,31 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-20 bg-charcoal relative z-20">
-      <div className="max-w-7xl mx-auto px-6 relative">
+    <section className="py-14 md:py-20 bg-charcoal relative z-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
-          className="relative -mt-32 md:-mt-40 bg-surface-dark/10 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl shadow-black/50 overflow-hidden"
+          className="relative -mt-24 md:-mt-40 bg-surface-dark/10 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-5 md:p-12 shadow-2xl shadow-black/50 overflow-hidden"
         >
           {/* Subtle Glow inside the container */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-brand/10 blur-3xl rounded-full opacity-50 pointer-events-none"></div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 relative z-10 divide-x divide-x-reverse divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 relative z-10 divide-x divide-x-reverse divide-white/10">
             {stats.map((stat) => {
               const Icon = stat.icon;
               return (
-                <div key={stat.id} className="flex flex-col items-center justify-center text-center px-4 group">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-brand flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-inner">
-                    <Icon size={28} strokeWidth={1.5} />
+                <div key={stat.id} className="flex flex-col items-center justify-center text-center px-3 md:px-4 group">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 text-brand flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-500 shadow-inner">
+                    <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold text-white mb-2 flex items-center justify-center" dir="ltr">
+                  <div className="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-2 flex items-center justify-center" dir="ltr">
                     <span className="text-brand font-light mr-1 opacity-80">{stat.suffix}</span>
                     <Counter from={0} to={stat.value} duration={2.5} />
                   </div>
-                  <div className="text-white/60 font-medium tracking-wide">
+                  <div className="text-white/60 font-medium tracking-wide text-sm md:text-base">
                     {stat.label}
                   </div>
                 </div>
