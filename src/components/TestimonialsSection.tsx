@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
+        <div className="flex sm:grid sm:grid-cols-3 gap-4 md:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
           {testimonials.map((item, index) => (
             <motion.div
               key={item.id}
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="min-w-[88%] md:min-w-0 shrink-0 snap-start bg-white rounded-3xl p-6 md:p-8 border border-surface-dark relative shadow-xl shadow-brand/5 hover:-translate-y-2 transition-transform duration-300"
+              className="min-w-[88%] sm:min-w-0 shrink-0 snap-start bg-white rounded-3xl p-6 md:p-8 border border-surface-dark relative shadow-xl shadow-brand/5 hover:-translate-y-2 transition-transform duration-300"
             >
               <Quote className="absolute top-6 left-6 text-brand/20 w-12 h-12" />
               

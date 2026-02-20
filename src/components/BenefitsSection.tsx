@@ -63,7 +63,7 @@ export default function BenefitsSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2"
+          className="flex sm:grid sm:grid-cols-3 gap-4 md:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar pb-2"
         >
           {benefits.map((benefit) => {
             const Icon = benefit.icon;
@@ -71,7 +71,7 @@ export default function BenefitsSection() {
               <motion.div 
                 key={benefit.id}
                 variants={item}
-                className="min-w-[86%] md:min-w-0 shrink-0 snap-start bg-surface/5 border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-surface/10 transition-colors group"
+                className="min-w-[86%] sm:min-w-0 shrink-0 snap-start bg-surface/5 border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-surface/10 transition-colors group"
               >
                 <div className={`w-16 h-16 rounded-2xl ${benefit.bg} ${benefit.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon size={32} strokeWidth={1.5} />

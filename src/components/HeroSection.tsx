@@ -16,7 +16,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-[100svh] md:h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+    <section ref={ref} className="relative min-h-[100svh] md:min-h-screen py-24 md:py-0 flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Background Video Placeholder (Since we don't have a real video, we use a CSS gradient with animated pattern or a high-quality image placeholder) */}
       <motion.div 
         style={{ y, opacity }}

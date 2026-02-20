@@ -22,7 +22,7 @@ export default function TrustSection() {
           </p>
         </div>
 
-        <div className="flex md:grid md:grid-cols-4 gap-4 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
+        <div className="flex sm:grid sm:grid-cols-4 gap-4 md:gap-12 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
           {partners.map((partner, index) => {
             const IconComponent = partner.icon;
             return (
@@ -32,7 +32,7 @@ export default function TrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="min-w-[62%] md:min-w-0 shrink-0 snap-start group flex flex-col items-center justify-center p-6 rounded-2xl border border-transparent hover:border-surface-dark hover:bg-surface transition-all duration-300"
+                className="min-w-[62%] sm:min-w-0 shrink-0 snap-start group flex flex-col items-center justify-center p-6 rounded-2xl border border-transparent hover:border-surface-dark hover:bg-surface transition-all duration-300"
               >
                 <div className="w-20 h-20 mb-4 rounded-full bg-surface-dark/50 flex items-center justify-center text-charcoal/40 group-hover:bg-brand/10 group-hover:text-brand group-hover:scale-110 transition-all duration-500">
                   <IconComponent size={36} strokeWidth={1.5} />
