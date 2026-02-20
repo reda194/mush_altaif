@@ -53,7 +53,7 @@ export default function NewsSection() {
           </button>
         </div>
 
-        <div className="flex sm:grid sm:grid-cols-3 gap-4 md:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
           {news.map((item, index) => (
             <motion.div 
               key={item.id}
@@ -61,7 +61,7 @@ export default function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="min-w-[88%] sm:min-w-0 shrink-0 snap-start group bg-white rounded-3xl overflow-hidden border border-charcoal/5 shadow-lg shadow-brand/5 hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+              className="group bg-white rounded-3xl overflow-hidden border border-charcoal/5 shadow-lg shadow-brand/5 hover:-translate-y-2 transition-transform duration-300 flex flex-col"
             >
               <div className="relative h-52 md:h-56 overflow-hidden">
                 <img 
@@ -87,11 +87,11 @@ export default function NewsSection() {
                   </div>
                 </div>
                 
-                <h3 className="text-lg font-bold text-charcoal leading-tight mb-3 group-hover:text-brand transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold text-charcoal leading-tight mb-3 group-hover:text-brand transition-colors sm:line-clamp-2">
                   {item.title}
                 </h3>
                 
-                <p className="text-charcoal/60 text-sm leading-relaxed mb-6 line-clamp-3">
+                <p className="text-charcoal/60 text-sm leading-relaxed mb-6 sm:line-clamp-3">
                   {item.summary}
                 </p>
                 
