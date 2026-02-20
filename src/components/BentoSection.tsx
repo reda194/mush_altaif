@@ -41,10 +41,10 @@ export default function BentoSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-4 h-auto sm:min-h-[560px]"
+          className="flex sm:grid sm:grid-cols-3 sm:grid-rows-2 gap-4 h-auto sm:min-h-[560px] overflow-x-auto sm:overflow-visible snap-x sm:snap-none snap-mandatory no-scrollbar pb-2"
         >
           {/* Card 1: Membership (Large) */}
-          <motion.div variants={item} className="sm:col-span-2 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 relative overflow-hidden group">
+          <motion.div variants={item} className="flex-[0_0_100%] max-w-full sm:flex-[initial] sm:max-w-none sm:min-w-0 snap-start sm:col-span-2 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-gradient-to-br from-charcoal-light to-charcoal border border-white/5 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-brand/20 transition-colors duration-500"></div>
             <div className="relative z-10 flex flex-col h-full justify-between">
               <div className="w-14 h-14 bg-brand/20 text-brand rounded-2xl flex items-center justify-center mb-6">
@@ -61,7 +61,7 @@ export default function BentoSection() {
           </motion.div>
 
           {/* Card 2: Governance (Tall) */}
-          <motion.div variants={item} className="sm:col-span-1 sm:row-span-2 rounded-3xl p-6 md:p-8 bg-surface text-charcoal border border-surface-dark relative overflow-hidden group hover:shadow-2xl hover:shadow-brand/10 transition-all duration-500">
+          <motion.div variants={item} className="flex-[0_0_100%] max-w-full sm:flex-[initial] sm:max-w-none sm:min-w-0 snap-start sm:col-span-1 sm:row-span-2 rounded-3xl p-6 md:p-8 bg-surface text-charcoal border border-surface-dark relative overflow-hidden group hover:shadow-2xl hover:shadow-brand/10 transition-all duration-500">
             <div className="flex flex-col h-full">
               <div className="w-14 h-14 bg-charcoal text-white rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-lg">
                 <ShieldCheck size={28} />
@@ -80,7 +80,7 @@ export default function BentoSection() {
           </motion.div>
 
           {/* Card 3: Events (Small) */}
-          <motion.div variants={item} className="sm:col-span-1 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-charcoal-light border border-white/5 relative overflow-hidden group">
+          <motion.div variants={item} className="flex-[0_0_100%] max-w-full sm:flex-[initial] sm:max-w-none sm:min-w-0 snap-start sm:col-span-1 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-charcoal-light border border-white/5 relative overflow-hidden group">
              <div className="relative z-10 flex gap-6 h-full items-center">
               <div className="w-16 h-16 shrink-0 bg-brand text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                 <CalendarDays size={32} />
@@ -93,7 +93,7 @@ export default function BentoSection() {
           </motion.div>
 
           {/* Card 4: Tracks (Small) */}
-          <motion.div variants={item} className="sm:col-span-1 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-brand text-white relative overflow-hidden group">
+          <motion.div variants={item} className="flex-[0_0_100%] max-w-full sm:flex-[initial] sm:max-w-none sm:min-w-0 snap-start sm:col-span-1 sm:row-span-1 rounded-3xl p-6 md:p-8 bg-brand text-white relative overflow-hidden group">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mixed-blend-overlay mix-blend-overlay"></div>
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div className="flex justify-between items-start">
