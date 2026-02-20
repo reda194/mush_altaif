@@ -16,6 +16,13 @@
   .glass-dark {
     @apply bg-charcoal/80 backdrop-blur-md border border-white/10 shadow-lg;
   }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 html {

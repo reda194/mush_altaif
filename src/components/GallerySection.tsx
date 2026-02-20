@@ -13,21 +13,21 @@ const slides = [
     title: 'مسار الهدا',
     distance: '5 كم',
     level: 'متوسط',
-    image: 'https://images.unsplash.com/photo-1594911772125-07fdafcfa6b8?q=80&w=2670&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop',
   },
   {
     id: 2,
     title: 'مسار الشفا الرياضي',
     distance: '8 كم',
     level: 'متقدم',
-    image: 'https://images.unsplash.com/photo-1579545465593-79daca78c7c9?q=80&w=2670&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop',
   },
   {
     id: 3,
     title: 'ممشى الردف',
     distance: '3 كم',
     level: 'سهل',
-    image: 'https://images.unsplash.com/photo-1620021663953-272da3bea3e4?q=80&w=2672&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2670&auto=format&fit=crop',
   },
   {
     id: 4,
@@ -62,8 +62,8 @@ export default function GallerySection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 bg-surface relative">
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row justify-between items-end">
+    <section className="py-16 md:py-24 bg-surface relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 bg-brand/10 text-brand rounded-xl flex items-center justify-center">
@@ -71,10 +71,10 @@ export default function GallerySection() {
             </div>
             <span className="text-brand font-bold tracking-wider text-sm uppercase">معرض المسارات</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal tracking-tight">اكتشف طبيعة الطائف</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-charcoal tracking-tight">اكتشف طبيعة الطائف</h2>
         </div>
         
-        <div className="flex gap-4 mt-6 md:mt-0" dir="ltr">
+        <div className="hidden md:flex gap-4 mt-6 md:mt-0" dir="ltr">
           <button 
             onClick={scrollPrev}
             disabled={!canScrollPrev}
@@ -92,7 +92,7 @@ export default function GallerySection() {
         </div>
       </div>
 
-      <div className="overflow-hidden px-6 pb-12" ref={emblaRef} dir="rtl">
+      <div className="overflow-hidden px-4 md:px-6 pb-4 md:pb-12" ref={emblaRef} dir="rtl">
         <div className="flex -ml-4 md:-ml-6" style={{ touchAction: 'pan-y' }}>
           {slides.map((slide, index) => (
             <motion.div 
@@ -101,7 +101,7 @@ export default function GallerySection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex-[0_0_85%] min-w-0 md:flex-[0_0_40%] lg:flex-[0_0_30%] pl-4 md:pl-6"
+              className="flex-[0_0_87%] min-w-0 md:flex-[0_0_40%] lg:flex-[0_0_30%] pl-4 md:pl-6"
             >
               <div className="group relative rounded-3xl overflow-hidden aspect-[4/5] shadow-lg">
                 <img 
@@ -111,9 +111,9 @@ export default function GallerySection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <h3 className="text-white text-2xl font-bold mb-3">{slide.title}</h3>
-                  <div className="flex items-center gap-4 text-white/80 text-sm font-medium">
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <h3 className="text-white text-xl md:text-2xl font-bold mb-3">{slide.title}</h3>
+                  <div className="flex items-center gap-3 md:gap-4 text-white/80 text-xs md:text-sm font-medium">
                     <span className="flex items-center gap-1">
                       <MapPin size={16} /> ممشى ورياضة
                     </span>

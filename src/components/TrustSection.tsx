@@ -12,17 +12,17 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-surface-dark relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+    <section className="py-16 md:py-24 bg-white border-y border-surface-dark relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16 max-w-2xl mx-auto">
           <span className="text-brand font-bold tracking-wider text-sm uppercase mb-4 block">موثوقية واحترافية</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-4">شركاء النجاح والحوكمة</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-3 md:mb-4">شركاء النجاح والحوكمة</h2>
           <p className="text-charcoal/60">
             نعمل تحت إشراف أفضل الجهات الحكومية والرياضية لضمان أعلى مستويات التنظيم والشفافية لمجتمعنا.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="flex sm:grid sm:grid-cols-4 gap-4 md:gap-12 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar pb-2">
           {partners.map((partner, index) => {
             const IconComponent = partner.icon;
             return (
@@ -32,7 +32,7 @@ export default function TrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-transparent hover:border-surface-dark hover:bg-surface transition-all duration-300"
+                className="min-w-[62%] sm:min-w-0 shrink-0 snap-start group flex flex-col items-center justify-center p-6 rounded-2xl border border-transparent hover:border-surface-dark hover:bg-surface transition-all duration-300"
               >
                 <div className="w-20 h-20 mb-4 rounded-full bg-surface-dark/50 flex items-center justify-center text-charcoal/40 group-hover:bg-brand/10 group-hover:text-brand group-hover:scale-110 transition-all duration-500">
                   <IconComponent size={36} strokeWidth={1.5} />

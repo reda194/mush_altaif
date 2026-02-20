@@ -27,14 +27,14 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col items-center text-center mb-10 md:mb-16">
           <div className="w-12 h-12 bg-surface text-brand rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-charcoal/5 group-hover:scale-110 transition-transform">
             <MessageCircleQuestion size={24} />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-charcoal mb-4">الأسئلة الشائعة</h2>
-          <p className="text-charcoal/60 text-lg max-w-2xl">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-charcoal mb-3 md:mb-4">الأسئلة الشائعة</h2>
+          <p className="text-charcoal/60 text-base md:text-lg max-w-2xl">
             جمعنا لك الإجابات لأكثر الاستفسارات التي تصلنا لنساعدك على بدء رحلتك معنا بكل سهولة ووضوح.
           </p>
         </div>
@@ -50,10 +50,10 @@ export default function FAQSection() {
               className={`border rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-brand bg-brand/5 shadow-md shadow-brand/5' : 'border-charcoal/10 bg-surface hover:border-brand/30'}`}
             >
               <button
-                className="w-full text-right px-6 py-5 flex items-center justify-between focus:outline-none"
+                className="w-full text-right px-4 md:px-6 py-4 md:py-5 flex items-center justify-between focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className={`font-bold pr-4 text-lg ${openIndex === index ? 'text-brand' : 'text-charcoal'}`}>
+                <span className={`font-bold pr-3 md:pr-4 text-base md:text-lg ${openIndex === index ? 'text-brand' : 'text-charcoal'}`}>
                   {faq.question}
                 </span>
                 <ChevronDown 
@@ -70,7 +70,7 @@ export default function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-10 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                    <div className="px-4 md:px-10 pb-5 md:pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4 text-sm md:text-base">
                       {faq.answer}
                     </div>
                   </motion.div>

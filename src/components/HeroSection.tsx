@@ -16,7 +16,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+    <section ref={ref} className="relative min-h-[100svh] md:min-h-screen py-24 md:py-0 flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Background Video Placeholder (Since we don't have a real video, we use a CSS gradient with animated pattern or a high-quality image placeholder) */}
       <motion.div 
         style={{ y, opacity }}
@@ -30,12 +30,12 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+      <div className="relative z-20 text-center px-4 md:px-6 max-w-4xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 glass bg-white/5 text-white/90 text-sm font-medium tracking-wide backdrop-blur-md"
+          className="inline-block mb-4 md:mb-6 px-4 py-1.5 rounded-full border border-white/20 glass bg-white/5 text-white/90 text-sm font-medium tracking-wide backdrop-blur-md"
         >
           جمعية المشاة الأولى في الطائف
         </motion.div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight"
+          className="text-4xl md:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight tracking-tight"
         >
           نحو مجتمع حيوي.. <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">
@@ -56,7 +56,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl text-center leading-relaxed"
+          className="text-base md:text-xl text-white/80 mb-8 md:mb-12 max-w-2xl text-center leading-relaxed"
         >
           نجمع عشاق المشي والطبيعة في مسارات الطائف الخلابة لنعزز جودة الحياة ونبني مجتمعاً صحياً ومستداماً.
         </motion.p>
@@ -65,7 +65,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto"
         >
           <button className="glass bg-brand/90 hover:bg-brand text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(0,166,81,0.4)] border border-brand/50 flex items-center justify-center gap-2 group text-lg">
             <span>انضم كعضو</span>
