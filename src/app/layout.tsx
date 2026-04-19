@@ -1,31 +1,41 @@
-import type { Metadata, Viewport } from 'next';
-import localFont from 'next/font/local';
+import type { Metadata } from 'next';
+import { Cairo } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants';
 
-const graphikArabic = localFont({
-  src: [
-    { path: '../../public/fonts/GraphikArabic-Light.ttf', weight: '300', style: 'normal' },
-    { path: '../../public/fonts/GraphikArabic-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../../public/fonts/GraphikArabic-Medium.ttf', weight: '500', style: 'normal' },
-    { path: '../../public/fonts/GraphikArabic-Semibold.ttf', weight: '600', style: 'normal' },
-    { path: '../../public/fonts/GraphikArabic-Bold.ttf', weight: '700', style: 'normal' },
-  ],
-  display: 'swap',
+const cairo = Cairo({
+  subsets: ['arabic'],
+  weight: ['300', '400', '600', '700'],
+  variable: '--font-cairo',
 });
 
 export const metadata: Metadata = {
-  title: 'مشاة الطائف | نحو مجتمع حيوي',
-  description: 'جمعية مشاة الطائف للرياضة المجتمعية. نهدف لخلق مجتمع رياضي حيوي.',
-};
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  viewportFit: 'cover',
+  title: {
+    default: `${SITE_NAME} | نحو مجتمع حيوي`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'ar_SA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -34,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={`${graphikArabic.className} antialiased flex flex-col min-h-screen`}>
+    <html lang="ar" dir="rtl" className={cairo.variable} suppressHydrationWarning>
+      <body className="antialiased flex flex-col min-h-screen">
         <Providers>
           <Header />
           <div className="flex-grow">
