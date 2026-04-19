@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -75,8 +76,11 @@ export default function Header() {
     }
   };
 
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   const topLinks = NAV_LINKS.filter((_, i) => i < 6);
-  const isSolid = isScrolled || isMobileMenuOpen;
+  const isSolid = isScrolled || isMobileMenuOpen || !isHomePage;
 
   return (
     <>
