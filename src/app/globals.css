@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #00a651; /* Vibrant Green */
+  --color-brand: #00a651;
   --color-brand-light: #33b874;
-  --color-charcoal: #1a1a1a; /* Charcoal */
-  --color-charcoal-light: #2d2d2d;
-  --color-surface: #f8f9fa;
-  --color-surface-dark: #e9ecef;
+  --color-brand-warm: #00964a;
+  --color-charcoal: #1c1f24;
+  --color-charcoal-light: #2c3038;
+  --color-warm-white: #fafaf7;
+  --color-warm-gray: #f2f1ec;
+  --color-surface: #f7f8f5;
+  --color-surface-dark: #e8eae3;
+  --font-display: var(--font-noto-kufi);
+  --font-body: var(--font-cairo);
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
-  }
-  .glass-dark {
-    @apply bg-charcoal/80 backdrop-blur-md border border-white/10 shadow-lg;
-  }
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -23,12 +22,43 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .font-display {
+    font-family: var(--font-noto-kufi), 'Noto Kufi Arabic', sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-cairo), 'Cairo', sans-serif;
+  }
 }
 
 html {
-  scroll-behavior: auto !important; /* Managed by Lenis */
+  scroll-behavior: auto !important;
 }
 
 body {
-  @apply text-charcoal bg-white antialiased selection:bg-brand selection:text-white overscroll-none;
+  font-family: var(--font-cairo), 'Cairo', sans-serif;
+  @apply text-charcoal bg-warm-white antialiased selection:bg-brand selection:text-white overscroll-none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-noto-kufi), 'Noto Kufi Arabic', sans-serif;
+}
+
+*:focus-visible {
+  outline: 2px solid #00a651;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
