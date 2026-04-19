@@ -17,6 +17,7 @@ export default function HikingPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "المسارات" }, { label: "مسارات الهايكنج" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المغامرة"
         title="مسارات الهايكنج"
         subtitle="مسارات جبلية ووديان خليلة لتجربة الهايكنج في أجمل مناطق الطائف"

@@ -17,6 +17,7 @@ export default function VolunteerPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الخدمات" }, { label: "بوابة التطوع" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="تطوع معنا"
         title="بوابة التطوع"
         subtitle="كن جزءاً من التغيير الإيجابي في مجتمعك - انضم كمتطع في جمعية مشاة الطائف"

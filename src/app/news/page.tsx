@@ -17,6 +17,7 @@ export default function NewsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الأخبار" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المركز الإعلامي"
         title="آخر الأخبار"
         subtitle="تابع آخر أخبار وفعاليات وأنشطة جمعية مشاة الطائف"

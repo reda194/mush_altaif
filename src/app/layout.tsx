@@ -10,6 +10,7 @@ const cairo = Cairo({
   subsets: ['arabic'],
   weight: ['300', '400', '600', '700'],
   variable: '--font-cairo',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ export default function RootLayout({
       <body className="antialiased flex flex-col min-h-screen">
         <Providers>
           <Header />
-          <div className="flex-grow">
+          <div id="main-content" className="flex-grow">
             {children}
           </div>
           <Footer />

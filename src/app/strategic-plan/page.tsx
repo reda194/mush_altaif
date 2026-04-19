@@ -17,6 +17,7 @@ export default function StrategicPlanPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الحوكمة", href: "/governance" }, { label: "الخطة الاستراتيجية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="التخطيط"
         title="الخطة الاستراتيجية"
         subtitle="خطة استراتيجية شاملة تستهدف تطوير وتنمية قطاع المشي والنشاط البدني في الطائف"
