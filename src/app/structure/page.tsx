@@ -15,6 +15,7 @@ export default function StructurePage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "عن الجمعية", href: "/about" }, { label: "الهيكل التنظيمي" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="التنظيم"
         title="الهيكل التنظيمي"
         subtitle="الهيكل التنظيمي لجمعية مشاة الطائف يوضح تسلسل المسؤوليات والصلاحيات"

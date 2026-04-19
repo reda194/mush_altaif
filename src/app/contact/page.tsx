@@ -17,6 +17,7 @@ export default function ContactPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "اتصل بنا" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="تواصل معنا"
         title="اتصل بنا"
         subtitle={`نحن هنا لمساعدتك. تواصل معنا عبر النموذج أدناه أو عبر بيانات الاتصال المباشرة.`}

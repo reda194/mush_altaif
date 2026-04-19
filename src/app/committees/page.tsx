@@ -24,6 +24,7 @@ export default function CommitteesPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "عن الجمعية", href: "/about" }, { label: "اللجان الأساسية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="التنظيم الداخلي"
         title="اللجان الأساسية"
         subtitle="تعمل لجان الجمعية المتخصصة على تحقيق أهدافها الاستراتيجية بكفاءة واحترافية"

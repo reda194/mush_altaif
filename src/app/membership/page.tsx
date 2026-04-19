@@ -17,6 +17,7 @@ export default function MembershipPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الخدمات" }, { label: "بوابة العضوية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="عضوية"
         title="بوابة العضوية"
         subtitle="انضم لعضوية الجمعية العمومية في جمعية مشاة الطائف وكن جزءاً من مجتمعنا الرياضي"

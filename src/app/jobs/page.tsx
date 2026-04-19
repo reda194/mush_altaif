@@ -17,6 +17,7 @@ export default function JobsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الخدمات" }, { label: "بوابة الوظائف" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="وظائف"
         title="بوابة الوظائف"
         subtitle="الفرص الوظيفية المتاحة في جمعية مشاة الطائف"

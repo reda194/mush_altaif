@@ -17,6 +17,7 @@ export default function BankingPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الخدمات" }, { label: "الحسابات البنكية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المدفوعات"
         title="الحسابات البنكية"
         subtitle="تحويل رسوم العضوية (150 ريال سعودي) لحساب الجمعية بعد قبول طلب العضوية"

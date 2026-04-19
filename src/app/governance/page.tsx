@@ -17,6 +17,7 @@ export default function GovernancePage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الحوكمة" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="الشفافية والنزاهة"
         title="الحوكمة واللوائح"
         subtitle="نلتزم بأعلى معايير الحوكمة والشفافية في جميع أعمالنا وعملياتنا"

@@ -17,6 +17,7 @@ export default function HajjServicePage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الخدمات" }, { label: "خدمة ضيوف الرحمن" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المبادرات"
         title="خدمة ضيوف الرحمن"
         subtitle="المبادرة الأولى لجمعية مشاة الطائف في خدمة ضيوف الرحمن"

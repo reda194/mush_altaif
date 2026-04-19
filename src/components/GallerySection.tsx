@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Camera, ChevronRight, ChevronLeft, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// TODO: Replace all Unsplash images with real community photos from Taif trails
 const slides = [
   {
     id: 1,

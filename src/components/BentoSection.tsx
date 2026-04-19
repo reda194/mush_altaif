@@ -1,18 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpLeft, ShieldCheck, Users, CalendarDays, Map } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Users, CalendarDays, Map } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BentoSection() {
   const container = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    show: { opacity: 1, transition: { staggerChildren: 0.05 } },
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100 } },
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] as const } },
   };
 
   return (
@@ -61,7 +61,7 @@ export default function BentoSection() {
               </p>
               <Link href="/governance" className="mt-auto flex items-center gap-2 text-brand font-bold text-sm border-t border-charcoal/5 pt-5 focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2">
                 <span>تعرف على حوكمتنا</span>
-                <ArrowUpLeft size={16} aria-hidden="true" />
+                <ArrowLeft size={16} aria-hidden="true" />
               </Link>
             </div>
           </motion.div>
@@ -92,7 +92,7 @@ export default function BentoSection() {
         <div className="mt-8 text-left">
           <Link href="/programs" className="inline-flex items-center gap-2 text-brand font-bold text-sm hover:text-charcoal transition-colors focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-4">
             عرض كل الخدمات
-            <ArrowUpLeft size={16} aria-hidden="true" />
+            <ArrowLeft size={16} aria-hidden="true" />
           </Link>
         </div>
       </div>

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Plus, X } from 'lucide-react';
 
 const faqs = [
   {
@@ -31,8 +31,10 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 md:px-6">
         <div className="mb-10">
           <span className="text-brand font-bold tracking-wider text-sm uppercase mb-4 block">مساعدة</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-charcoal mb-4">الأسئلة الشائعة</h2>
-          <p className="text-charcoal/60 text-lg max-w-2xl">
+          <h2 className="font-display text-h2-fluid font-bold tracking-tight text-charcoal mb-4">
+            الأسئلة الشائعة
+          </h2>
+          <p className="text-charcoal/60 max-w-[55ch]">
             جمعنا لك الإجابات لأكثر الاستفسارات التي تصلنا لنساعدك على بدء رحلتك معنا بكل سهولة ووضوح.
           </p>
         </div>
@@ -49,11 +51,11 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-20px' }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05, ease: [0.25, 1, 0.5, 1] as const }}
                 role="listitem"
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                className={`border rounded-2xl transition-colors duration-300 ${
                   isOpen
-                    ? 'border-brand bg-brand/5 shadow-sm'
+                    ? 'border-brand bg-brand/5'
                     : 'border-charcoal/10 bg-warm-white hover:border-brand/30'
                 }`}
               >
@@ -62,35 +64,37 @@ export default function FAQSection() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full text-right px-6 py-5 flex items-center justify-between focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2"
+                  className="w-full text-right px-6 py-5 flex items-center justify-between gap-4 focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2"
                 >
-                  <span className={`font-bold pr-4 text-lg ${isOpen ? 'text-brand' : 'text-charcoal'}`}>
+                  <span className={`font-bold text-base md:text-lg leading-snug ${isOpen ? 'text-brand' : 'text-charcoal'}`}>
                     {faq.question}
                   </span>
-                  <ChevronDown
-                    className={`text-charcoal/50 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-brand' : ''}`}
-                    size={20}
-                    aria-hidden="true"
-                  />
+                  <span className="shrink-0">
+                    {isOpen ? (
+                      <X size={18} className="text-brand" aria-hidden="true" />
+                    ) : (
+                      <Plus size={18} className="text-charcoal/40" aria-hidden="true" />
+                    )}
+                  </span>
                 </button>
 
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      id={panelId}
-                      role="region"
-                      aria-labelledby={buttonId}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="px-10 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* CSS grid accordion — no layout thrash, compositor-only */}
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  style={{
+                    display: 'grid',
+                    gridTemplateRows: isOpen ? '1fr' : '0fr',
+                    transition: 'grid-template-rows 280ms ease-out',
+                  }}
+                >
+                  <div className="overflow-hidden min-h-0">
+                    <div className="px-6 pb-6 pt-1 text-charcoal/70 leading-relaxed border-t border-charcoal/5">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

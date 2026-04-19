@@ -39,7 +39,7 @@ export default function CTASection() {
 
               <Link
                 href="/contact"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold transition-colors text-lg focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                className="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-bold transition-colors hover:bg-white/10 text-lg focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 تواصل معنا
               </Link>

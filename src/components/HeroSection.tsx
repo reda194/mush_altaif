@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
-import { useRef } from 'react';
+import { ArrowLeft, ChevronDown } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function HeroSection() {
@@ -15,6 +15,18 @@ export default function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
+  const [hasScrolled, setHasScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 80) {
+        setHasScrolled(true);
+        window.removeEventListener('scroll', onScroll);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <section
       ref={ref}
@@ -23,6 +35,7 @@ export default function HeroSection() {
     >
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal z-10" />
+        {/* TODO: Replace with real community photos from Taif */}
         <Image
           src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2670&auto=format&fit=crop"
           alt="مسار طبيعي في جبال الطائف"
@@ -47,7 +60,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.15] tracking-tight"
+          className="font-display font-bold text-white mb-6 leading-[1.15] tracking-tight"
+          style={{ fontSize: 'clamp(2.5rem, 5vw + 1rem, 4.5rem)' }}
         >
           نحو مجتمع حيوي
           <br />
@@ -79,12 +93,34 @@ export default function HeroSection() {
 
           <Link
             href="/contact"
-            className="bg-white/10 hover:bg-white/15 text-white px-8 py-4 rounded-xl font-bold transition-colors border border-white/15 text-lg focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+            className="border-2 border-white/40 text-white px-8 py-4 rounded-xl font-bold transition-colors hover:bg-white/10 text-lg focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             تواصل معنا
           </Link>
         </motion.div>
       </div>
+
+      {/* Scroll indicator — fades out after first scroll */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: hasScrolled ? 0 : 1 }}
+        transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] as const, delay: hasScrolled ? 0 : 1.2 }}
+      >
+        <span className="text-white/40 text-[11px] font-medium tracking-[0.2em] uppercase">تمرير</span>
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{
+            duration: 1.8,
+            repeat: Infinity,
+            ease: [0.25, 1, 0.5, 1] as const,
+            times: [0, 0.45, 1],
+          }}
+        >
+          <ChevronDown size={22} className="text-white/40" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

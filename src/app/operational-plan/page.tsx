@@ -17,6 +17,7 @@ export default function OperationalPlanPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الحوكمة", href: "/governance" }, { label: "الخطة التشغيلية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="التنفيذ"
         title="الخطة التشغيلية"
         subtitle="خطة تشغيلية سنوية مفصلة لتنفيذ الأهداف الاستراتيجية للجمعية"

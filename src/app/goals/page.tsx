@@ -26,6 +26,7 @@ export default function GoalsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "عن الجمعية", href: "/about" }, { label: "أهداف الجمعية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="استراتيجيتنا"
         title="أهداف الجمعية"
         subtitle="أهداف استراتيجية نسعى لتحقيقها من أجل مجتمع رياضي حيوي ومستدام"

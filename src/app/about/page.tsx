@@ -18,6 +18,7 @@ export default function AboutPage() {
 
       <AnimatedSection>
         <SectionHeading
+          className="text-center"
           badge="من نحن"
           title="جمعية مشاة الطائف"
           subtitle="جمعية رياضية مجتمعية تهدف إلى نشر ثقافة المشي وتعزيز نمط الحياة الصحي في محافظة الطائف"

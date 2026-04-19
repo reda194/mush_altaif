@@ -17,6 +17,7 @@ export default function VisionPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "عن الجمعية", href: "/about" }, { label: "الرسالة والرؤية" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="هويتنا"
         title="الرسالة والرؤية"
         subtitle="نحو مجتمع رياضي حيوي ومستدام في محافظة الطائف"
