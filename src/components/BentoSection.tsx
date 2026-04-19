@@ -39,7 +39,7 @@ export default function BentoSection() {
                 <div className="w-14 h-14 bg-brand/20 text-brand rounded-xl flex items-center justify-center">
                   <Users size={28} aria-hidden="true" />
                 </div>
-                <span className="text-white/30 text-xs font-semibold border border-white/10 px-3 py-1 rounded-full">150 ر.س/سنة</span>
+                <span className="text-rose-accent/80 text-xs font-semibold border border-rose-accent/20 px-3 py-1 rounded-full">150 ر.س/سنة</span>
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold mb-3">عضوية المشاة</h3>

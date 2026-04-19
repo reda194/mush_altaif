@@ -45,8 +45,8 @@ export default function MapSection() {
 
           <div className="absolute bottom-6 right-6 left-6 md:left-auto md:right-6 md:w-80">
             <div className="bg-warm-white/95 p-6 rounded-2xl shadow-lg border border-charcoal/10">
-              <div className="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center mb-3">
-                <MapPin className="text-brand" size={20} aria-hidden="true" />
+              <div className="w-10 h-10 bg-rose-accent/10 rounded-full flex items-center justify-center mb-3">
+                <MapPin className="text-rose-accent" size={20} aria-hidden="true" />
               </div>
               <h3 className="font-display text-lg font-bold mb-1">ممشى الردف الجديد</h3>
               <p className="text-charcoal/60 text-sm mb-4">نقطة التجمع الرئيسية للتدريبات الصباحية في محافظة الطائف.</p>

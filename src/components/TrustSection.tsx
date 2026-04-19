@@ -38,7 +38,7 @@ export default function TrustSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-transparent hover:border-surface-dark hover:bg-warm-white transition-all duration-300"
               >
-                <div className="w-20 h-20 mb-4 rounded-full bg-surface-dark/50 flex items-center justify-center text-charcoal/40 group-hover:bg-brand/10 group-hover:text-brand group-hover:scale-110 transition-all duration-500">
+                <div className="w-20 h-20 mb-4 rounded-full bg-surface-dark/50 flex items-center justify-center text-charcoal/40 group-hover:bg-rose-accent/10 group-hover:text-rose-accent group-hover:scale-110 transition-all duration-500">
                   <IconComponent size={36} strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <h3 className="font-display text-base font-bold text-charcoal/80 group-hover:text-charcoal transition-colors text-center">

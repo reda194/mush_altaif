@@ -34,7 +34,7 @@ function StarRating({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5 mb-4" aria-label={`تقييم ${count} من 5 نجوم`}>
       {[...Array(count)].map((_, i) => (
-        <Star key={i} size={15} className="text-brand fill-brand" aria-hidden="true" />
+        <Star key={i} size={15} className="text-rose-accent fill-rose-accent" aria-hidden="true" />
       ))}
     </div>
   );

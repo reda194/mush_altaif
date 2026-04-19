@@ -16,7 +16,8 @@ export default function CTASection() {
           className="bg-brand rounded-2xl p-6 md:p-12 text-center text-white relative overflow-hidden"
         >
           <div className="relative z-10 flex flex-col items-center">
-            <span className="bg-white/20 px-4 py-1.5 rounded-lg text-sm font-bold mb-6 md:mb-8 inline-block">
+            <span className="bg-white/20 px-4 py-1.5 rounded-lg text-sm font-bold mb-6 md:mb-8 inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-accent shrink-0" aria-hidden="true" />
               باب التسجيل مفتوح الآن
             </span>
 
