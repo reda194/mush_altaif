@@ -30,7 +30,7 @@ export default function FAQSection() {
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="w-12 h-12 bg-surface text-brand rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-charcoal/5 group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 bg-surface text-brand rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-charcoal/5 transition-transform">
             <MessageCircleQuestion size={24} />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-charcoal mb-4">الأسئلة الشائعة</h2>

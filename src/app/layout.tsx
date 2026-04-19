@@ -4,6 +4,7 @@ import './globals.css';
 import Providers from '@/components/Providers';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants';
 
 const cairo = Cairo({
   subsets: ['arabic'],
@@ -12,8 +13,29 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: 'مشاة الطائف | نحو مجتمع حيوي',
-  description: 'جمعية مشاة الطائف للرياضة المجتمعية. نهدف لخلق مجتمع رياضي حيوي.',
+  title: {
+    default: `${SITE_NAME} | نحو مجتمع حيوي`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'ar_SA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={cairo.variable}>
+    <html lang="ar" dir="rtl" className={cairo.variable} suppressHydrationWarning>
       <body className="antialiased flex flex-col min-h-screen">
         <Providers>
           <Header />

@@ -87,7 +87,7 @@ export default function NewsSection() {
                   </div>
                 </div>
                 
-                <h3 className="text-x font-bold text-charcoal leading-tight mb-3 group-hover:text-brand transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-charcoal leading-tight mb-3 group-hover:text-brand transition-colors line-clamp-2">
                   {item.title}
                 </h3>
                 

@@ -92,7 +92,7 @@ export default function BentoSection() {
 
           {/* Card 4: Tracks (Small) */}
           <motion.div variants={item} className="md:col-span-1 md:row-span-1 rounded-3xl p-8 bg-brand text-white relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mixed-blend-overlay mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div className="flex justify-between items-start">
                 <Map size={32} className="opacity-80" />
