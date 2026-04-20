@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { HeartPulse, Brain, UsersRound } from 'lucide-react';
 
@@ -10,12 +11,9 @@ const benefits = [
     description: 'المشي المنتظم يعزز صحة القلب، يحسن الدورة الدموية، ويساعد في الحفاظ على وزن مثالي لجسم أكثر حيوية.',
     icon: HeartPulse,
     detail: 'تقليل خطر الأمراض المزمنة بنسبة 30%',
-    visualStat: '٣٠٪',
-    visualLabel: 'تقليل أمراض القلب',
-    visualBg: 'bg-brand',
-    visualText: 'text-white',
-    visualIconOpacity: 'opacity-10',
-    visualStatOpacity: '',
+    illustration: '/undraw_bike-ride_ba0o.svg',
+    illustrationAlt: 'رسم توضيحي لشخص يركب دراجة يرمز للنشاط البدني',
+    visualBg: 'bg-brand/5',
   },
   {
     id: 2,
@@ -23,12 +21,9 @@ const benefits = [
     description: 'التواجد في الطبيعة يقلل التوتر، يحسن المزاج، ويزيد من التركيز والإبداع. جبال الطائف علاج طبيعي.',
     icon: Brain,
     detail: 'تخفيض الكورتيزول عبر المشي 30 دقيقة يومياً',
-    visualStat: '٣٠',
-    visualLabel: 'دقيقة يومية تكفي',
-    visualBg: 'bg-rose-accent',
-    visualText: 'text-white',
-    visualIconOpacity: 'opacity-10',
-    visualStatOpacity: '',
+    illustration: '/undraw_fitness-stats_bd09.svg',
+    illustrationAlt: 'رسم توضيحي لإحصائيات اللياقة البدنية',
+    visualBg: 'bg-rose-accent/5',
   },
   {
     id: 3,
@@ -36,12 +31,9 @@ const benefits = [
     description: 'فرصة لبناء علاقات حقيقية وتكوين صداقات مع من يشاركونك شغف المشي والطبيعة في مدينتك.',
     icon: UsersRound,
     detail: 'أكثر من 3,500 عضو يسيرون معاً أسبوعياً',
-    visualStat: '+٣٥٠٠',
-    visualLabel: 'عضو نشط',
-    visualBg: 'bg-charcoal',
-    visualText: 'text-brand-light',
-    visualIconOpacity: 'opacity-[0.07]',
-    visualStatOpacity: '',
+    illustration: '/undraw_smartwatch-map_3u18.svg',
+    illustrationAlt: 'رسم توضيحي لساعة ذكية وخريطة ترمز للتواصل والمسارات',
+    visualBg: 'bg-charcoal/5',
   },
 ];
 
@@ -105,25 +97,18 @@ export default function BenefitsSection() {
                   </p>
                 </div>
 
-                {/* Visual panel */}
+                {/* Visual panel — SVG illustration */}
                 <div className={isEven ? 'md:order-1' : 'md:order-2'}>
                   <div
-                    className={`${benefit.visualBg} rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-10 relative overflow-hidden`}
-                    aria-hidden="true"
+                    className={`${benefit.visualBg} rounded-2xl aspect-[4/3] flex items-center justify-center p-8 md:p-12 relative overflow-hidden border border-charcoal/5`}
                   >
-                    <Icon
-                      size={160}
-                      strokeWidth={0.8}
-                      className={`absolute ${benefit.visualText} ${benefit.visualIconOpacity} pointer-events-none`}
+                    <Image
+                      src={benefit.illustration}
+                      alt={benefit.illustrationAlt}
+                      width={400}
+                      height={300}
+                      className="w-full h-auto max-h-[280px] object-contain"
                     />
-                    <span
-                      className={`font-display text-5xl md:text-6xl font-bold relative z-10 ${benefit.visualText}`}
-                    >
-                      {benefit.visualStat}
-                    </span>
-                    <span className={`text-sm font-semibold mt-2 relative z-10 ${benefit.visualText} opacity-70`}>
-                      {benefit.visualLabel}
-                    </span>
                   </div>
                 </div>
               </motion.div>

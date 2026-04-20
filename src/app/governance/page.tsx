@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FileText, ShieldCheck, Scale, BookOpen } from "lucide-react";
+import { FileText, ShieldCheck, Scale, BookOpen, Download, Calendar } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: `الحوكمة | ${SITE_NAME}`,
   description: "لوائح وإفصاحات حوكمة جمعية مشاة الطائف",
 };
+
+const documents = [
+  { title: "اللائحة الأساسية", desc: "اللوائح والأنظمة الأساسية المنظمة لعمل الجمعية", href: "/docs/bylaws.pdf", icon: FileText },
+  { title: "القوائم المالية 2024", desc: "القوائم المالية المعتمدة لعام 2024م", href: "/docs/financial-report-2024.pdf", icon: Calendar },
+  { title: "تقرير جمعية مشاة الطائف 2023", desc: "التقرير السنوي الشامل لعام 2023م", href: "/docs/annual-report-2023.pdf", icon: BookOpen },
+  { title: "القوائم المالية 2022", desc: "القوائم المالية المعتمدة لعام 2022م", href: "/docs/financial-report-2022.pdf", icon: Calendar },
+  { title: "القوائم المالية 2021", desc: "القوائم المالية المعتمدة لعام 2021م", href: "/docs/financial-report-2021.pdf", icon: Calendar },
+];
 
 export default function GovernancePage() {
   return (
@@ -23,6 +31,7 @@ export default function GovernancePage() {
         subtitle="نلتزم بأعلى معايير الحوكمة والشفافية في جميع أعمالنا وعملياتنا"
       />
 
+      {/* Governance Info Cards */}
       <div className="grid sm:grid-cols-2 gap-6 mt-12">
         {[
           { icon: FileText, title: "اللائحة الأساسية", desc: "اللوائح والأنظمة الأساسية المنظمة لعمل الجمعية وفقأً للأنظمة المعتمدة من المركز الوطني لتنمية القطاع غير الربحي." },
@@ -42,6 +51,35 @@ export default function GovernancePage() {
         ))}
       </div>
 
+      {/* Downloadable Documents Section */}
+      <AnimatedSection delay={0.3}>
+        <div className="mt-12 bg-surface rounded-2xl p-8 border border-charcoal/5">
+          <h3 className="text-xl font-bold text-charcoal mb-6">📄 الوثائق والتقارير</h3>
+          <p className="text-charcoal/60 text-sm mb-6">يمكنك تحميل الوثائق الرسمية والتقارير المالية المعتمدة</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {documents.map((doc) => (
+              <a
+                key={doc.title}
+                href={doc.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-all duration-200 group"
+              >
+                <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+                  <doc.icon className="w-5 h-5 text-brand" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-charcoal text-sm truncate">{doc.title}</p>
+                  <p className="text-charcoal/50 text-xs truncate">{doc.desc}</p>
+                </div>
+                <Download className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Supervisory Authority */}
       <AnimatedSection delay={0.4}>
         <div className="mt-12 bg-charcoal rounded-2xl p-8 text-white text-center">
           <h3 className="text-xl font-bold mb-3">الجهة المشرفة</h3>

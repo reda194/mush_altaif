@@ -23,8 +23,8 @@
   --color-surface: oklch(0.97 0.005 155);
   --color-surface-dark: oklch(0.93 0.005 155);
 
-  /* Font families — Cairo for all text */
-  --font-display: var(--font-cairo);
+  /* Font families — GraphikArabic for headings, Cairo for body */
+  --font-display: var(--font-graphik);
   --font-body: var(--font-cairo);
 }
 
@@ -37,9 +37,9 @@
     display: none;
   }
 
-  /* Semantic font utilities — both map to Cairo */
+  /* Semantic font utilities — GraphikArabic for display, Cairo for body */
   .font-display {
-    font-family: var(--font-cairo), 'Cairo', sans-serif;
+    font-family: var(--font-graphik), var(--font-cairo), 'Cairo', sans-serif;
   }
   .font-body {
     font-family: var(--font-cairo), 'Cairo', sans-serif;
@@ -81,7 +81,7 @@ span, label, button, input, textarea, select {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cairo), 'Cairo', sans-serif;
+  font-family: var(--font-graphik), var(--font-cairo), 'Cairo', sans-serif;
   line-height: 1.3;
   text-wrap: balance;
 }

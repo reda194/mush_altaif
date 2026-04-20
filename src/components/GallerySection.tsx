@@ -7,35 +7,34 @@ import { useCallback, useEffect, useState } from 'react';
 import { Camera, ChevronRight, ChevronLeft, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// TODO: Replace all Unsplash images with real community photos from Taif trails
 const slides = [
   {
     id: 1,
-    title: 'مسار الهدا',
-    distance: '5 كم',
-    level: 'متوسط',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop',
+    title: 'أعضاء الجمعية في الميدان',
+    distance: 'مشي جماعي',
+    level: 'جميع المستويات',
+    image: '/images/members-group.jpeg',
   },
   {
     id: 2,
-    title: 'مسار الشفا الرياضي',
-    distance: '8 كم',
-    level: 'متقدم',
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop',
+    title: 'مسار الهدا',
+    distance: '5 كم',
+    level: 'متوسط',
+    image: '/images/neom-I7NOiVT6jq0-unsplash.jpg',
   },
   {
     id: 3,
     title: 'ممشى الردف',
     distance: '3 كم',
     level: 'سهل',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop',
+    image: '/images/andrii-solok-eC-Bcw3pGbg-unsplash.jpg',
   },
   {
     id: 4,
-    title: 'ممشى السيل المفتوح',
-    distance: '10 كم',
+    title: 'مسار الشفا الرياضي',
+    distance: '8 كم',
     level: 'متقدم',
-    image: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=800&auto=format&fit=crop',
+    image: '/images/jesse-desjardins-MCuapL9Xfb8-unsplash.jpg',
   },
 ];
 
