@@ -37,9 +37,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-brand rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
-              م
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.jpeg" alt="شعار مشاة الطائف" className="w-8 h-8 rounded-full object-cover" />
             <span className="text-xl font-bold text-white font-display">مشاة الطائف</span>
           </div>
           <p className="text-sm max-w-sm leading-relaxed mb-4">
@@ -77,7 +76,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="روابط سريعة">
-          <h2 className="text-white font-bold mb-4 font-display">روابط سريعة</h2>
+          <h2 className="text-white font-semibold text-sm mb-4 font-display">روابط سريعة</h2>
           <ul className="space-y-3" role="list">
             {quickLinks.map((item) => (
               <li key={item.href}>
@@ -91,7 +90,7 @@ export default function Footer() {
         </nav>
 
         <nav aria-label="روابط الحوكمة">
-          <h2 className="text-white font-bold mb-4 font-display">الحوكمة والسياسات</h2>
+          <h2 className="text-white font-semibold text-sm mb-4 font-display">الحوكمة والسياسات</h2>
           <ul className="space-y-3" role="list">
             {governanceLinks.map((item) => (
               <li key={item.href}>

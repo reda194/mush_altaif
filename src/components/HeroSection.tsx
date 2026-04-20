@@ -35,10 +35,9 @@ export default function HeroSection() {
     >
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal z-10" />
-        {/* TODO: Replace with real community photos from Taif */}
         <Image
-          src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2670&auto=format&fit=crop"
-          alt="مسار طبيعي في جبال الطائف"
+          src="/images/members-group.jpeg"
+          alt="أعضاء جمعية مشاة الطائف في أحد مسارات جبال الطائف"
           fill
           sizes="100vw"
           className="object-cover"

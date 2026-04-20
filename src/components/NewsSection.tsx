@@ -12,8 +12,7 @@ const news = [
     category: 'أخبار الجمعية',
     date: '15 أكتوبر 2026',
     author: 'إدارة الإعلام',
-    // TODO: Replace with real news photos from Taif events
-    image: 'https://images.unsplash.com/photo-1552674605-15c2145eba11?q=80&w=800&auto=format&fit=crop',
+    image: '/images/members-group.jpeg',
     summary: 'في أجواء مليئة بالحماس والروح الرياضية، انطلق ماراثون الطائف السنوي الذي تنظمه الجمعية برعاية أمانة الطائف ووزارة الرياضة.',
   },
   {
@@ -22,8 +21,7 @@ const news = [
     category: 'مسارات جديدة',
     date: '02 نوفمبر 2026',
     author: 'فريق الاستكشاف',
-    // TODO: Replace with real trail photos from Taif
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop',
+    image: '/images/neom-I7NOiVT6jq0-unsplash.jpg',
     summary: 'ضمن خطتها التوسعية، تعلن الجمعية عن افتتاح مسار الشفاء الجبلي الذي يمتد لـ 12 كيلومتراً وسط غابات العرعر الخلابة.',
   },
   {
@@ -32,8 +30,7 @@ const news = [
     category: 'تثقيف صحي',
     date: '20 نوفمبر 2026',
     author: 'اللجنة الطبية',
-    // TODO: Replace with real event photos
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop',
+    image: '/images/andrii-solok-eC-Bcw3pGbg-unsplash.jpg',
     summary: 'ندعوكم لحضور الورشة التثقيفية المجانية حول أفضل الممارسات الغذائية لبناء الطاقة وتحسين الاستشفاء العضلي بعد المسافات الطويلة.',
   },
 ];
