@@ -14,7 +14,7 @@ export default function SectionHeading({
   light?: boolean;
 }) {
   return (
-    <div className={cn("text-center mb-12", className)}>
+    <div className={cn("mb-12", className)}>
       {badge && (
         <span
           className={cn(

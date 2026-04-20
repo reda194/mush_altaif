@@ -17,6 +17,7 @@ export default function PartnersPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "شركاؤنا" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="الشراكات"
         title="شركاؤنا"
         subtitle="نحن نعتبر شركاءنا الأعزاء جزءاً من عائلتنا - نكون قيادة ناجحة معاً ونحقق نجاحاً متبادلاً"

@@ -17,6 +17,7 @@ export default function BoardPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "عن الجمعية", href: "/about" }, { label: "مجلس الإدارة" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="القيادة"
         title="مجلس الإدارة"
         subtitle="فريق قيادي متفانٍ يعمل على تحقيق رؤية الجمعية ورسالتها في خدمة المجتمع"

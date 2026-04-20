@@ -17,6 +17,7 @@ export default function EventsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "الفعاليات" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="الأنشطة"
         title="الفعاليات"
         subtitle="فعاليات وأنشطة رياضية مجتمعية تنظمها جمعية مشاة الطائف"

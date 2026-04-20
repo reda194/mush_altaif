@@ -1,73 +1,93 @@
 'use client';
-/* eslint-disable @next/next/no-img-element */
 
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'عبدالله العتيبي',
+    role: 'عضو منذ 3 سنوات',
+    route: 'مسار الهدا',
+    rating: 5,
+    text: 'انضمامي لمشاة الطائف كان نقطة تحول في حياتي. لم أخسر الوزن فقط، بل كسبت عائلة ثانية وبيئة محفزة لا مثيل لها.',
+  },
+  {
+    id: 2,
+    name: 'سارة خالد',
+    role: 'مشاركة في الماراثون',
+    route: 'ماراثون الطائف 2024',
+    rating: 5,
+    text: 'التنظيم والاحترافية في فعاليات الجمعية تضاهي المسابقات العالمية. شكراً لجهودكم في تعزيز الرياضة النسائية في الطائف.',
+  },
+  {
+    id: 3,
+    name: 'محمد الزهراني',
+    role: 'قائد مسار',
+    route: 'مسار الشفا الجبلي',
+    rating: 5,
+    text: 'طبيعة الطائف ساحرة، واكتشافها مشياً على الأقدام مع هذه النخبة يعطيك طاقة إيجابية تكفيك لأسابيع. أنصح الجميع بالانضمام.',
+  },
+];
+
+function StarRating({ count }: { count: number }) {
+  return (
+    <div className="flex gap-0.5 mb-4" aria-label={`تقييم ${count} من 5 نجوم`}>
+      {[...Array(count)].map((_, i) => (
+        <Star key={i} size={15} className="text-rose-accent fill-rose-accent" aria-hidden="true" />
+      ))}
+    </div>
+  );
+}
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'عبدالله العتيبي',
-      role: 'عضو منذ 3 سنوات',
-      text: 'انضمامي لمشاة الطائف كان نقطة تحول في حياتي. لم أخسر الوزن فقط، بل كسبت عائلة ثانية وبيئة محفزة لا مثيل لها.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
-    },
-    {
-      id: 2,
-      name: 'سارة خالد',
-      role: 'مشاركة في الماراثون',
-      text: 'التنظيم والاحترافية في فعاليات الجمعية تضاهي المسابقات العالمية. شكراً لجهودكم في تعزيز الرياضة النسائية في الطائف.',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
-    },
-    {
-      id: 3,
-      name: 'محمد الزهراني',
-      role: 'قائد مسار',
-      text: 'طبيعة الطائف ساحرة، واكتشافها مشياً على الأقدام مع هذه النخبة يعطيك طاقة إيجابية تكفيك لأسابيع. أنصح الجميع بالانضمام.',
-      avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=150&auto=format&fit=crop',
-    }
-  ];
-
   return (
-    <section className="py-16 md:py-24 bg-surface relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-warm-gray relative overflow-hidden" aria-label="آراء الأعضاء">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-10 md:mb-16 max-w-2xl mx-auto">
+        <div className="mb-8 md:mb-10">
           <span className="text-brand font-bold tracking-wider text-sm uppercase mb-4 block">آراء المجتمع</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-3 md:mb-4">قصص نجاح تلهمنا</h2>
-          <p className="text-charcoal/60 text-base md:text-lg">
+          <h2 className="font-display text-h2-fluid font-bold text-charcoal tracking-tight mb-3 md:mb-4">
+            قصص نجاح تلهمنا
+          </h2>
+          <p className="text-charcoal/60 max-w-[55ch]">
             نفخر بكوننا جزءاً من التغيير الإيجابي في حياة أعضائنا. إليك ما يقولونه عن تجربتهم الفعّالة معنا.
           </p>
         </div>
 
-        <div className="flex sm:grid sm:grid-cols-3 gap-4 md:gap-8 overflow-x-auto sm:overflow-visible snap-x sm:snap-none snap-mandatory no-scrollbar pb-2">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-8">
+          {/* TODO: Replace with real community member photos from Taif */}
           {testimonials.map((item, index) => (
-            <motion.div
+            <motion.blockquote
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="flex-[0_0_100%] max-w-full sm:flex-[initial] sm:max-w-none sm:min-w-0 snap-start bg-white rounded-3xl p-6 md:p-8 border border-surface-dark relative shadow-xl shadow-brand/5 hover:-translate-y-2 transition-transform duration-300"
+              className={`bg-warm-white rounded-2xl p-6 md:p-8 border border-charcoal/5 shadow-sm hover:-translate-y-1 transition-transform duration-300 ${
+                index === 0 ? 'sm:mt-0' : index === 1 ? 'sm:mt-6' : 'sm:mt-3'
+              }`}
             >
-              <Quote className="absolute top-6 left-6 text-brand/20 w-12 h-12" />
-              
-              <div className="flex items-center gap-4 mb-5 md:mb-6">
-                <img 
-                  src={item.avatar} 
-                  alt={item.name} 
-                  className="w-16 h-16 rounded-full object-cover border-2 border-brand/20"
-                />
+              <Quote className="text-brand/20 w-8 h-8 mb-3" aria-hidden="true" />
+              <StarRating count={item.rating} />
+
+              <p className="text-charcoal/70 leading-relaxed text-sm md:text-base mb-6">
+                &ldquo;{item.text}&rdquo;
+              </p>
+
+              <div className="flex items-center gap-4 border-t border-charcoal/5 pt-5">
+                <div
+                  className="w-12 h-12 rounded-full bg-brand/10 border-2 border-brand/20 flex items-center justify-center text-brand font-bold text-lg shrink-0"
+                  aria-hidden="true"
+                >
+                  {item.name.charAt(0)}
+                </div>
                 <div>
-                  <h4 className="font-bold text-charcoal text-lg">{item.name}</h4>
-                  <span className="text-sm text-brand font-medium">{item.role}</span>
+                  <h3 className="font-bold text-charcoal">{item.name}</h3>
+                  <span className="text-xs text-brand font-medium block">{item.role}</span>
+                  <span className="text-xs text-charcoal/40 mt-0.5 block">{item.route}</span>
                 </div>
               </div>
-              
-              <p className="text-charcoal/70 leading-relaxed relative z-10 text-sm md:text-base">
-                &quot;{item.text}&quot;
-              </p>
-            </motion.div>
+            </motion.blockquote>
           ))}
         </div>
       </div>

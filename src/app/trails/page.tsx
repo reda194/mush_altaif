@@ -17,6 +17,7 @@ export default function TrailsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "المسارات" }, { label: "مسارات المشي" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المسارات"
         title="مسارات المشي"
         subtitle="مسارات ممشى معتمدة في محافظة الطائف وضواحيها - اختر المسار الأقرب إليك"

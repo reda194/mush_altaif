@@ -26,6 +26,7 @@ export default function GalleryPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "مكتبة الصور" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="المركز الإعلامي"
         title="مكتبة الصور"
         subtitle="صور من أنشطة وفعاليات ومسارات جمعية مشاة الطائف"

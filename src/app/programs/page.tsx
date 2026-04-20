@@ -20,6 +20,7 @@ export default function ProgramsPage() {
       <Breadcrumb items={[{ label: "الرئيسية", href: "/" }, { label: "البرامج والأنشطة" }]} />
 
       <SectionHeading
+        className="text-center"
         badge="الأنشطة"
         title="البرامج والأنشطة"
         subtitle="برامج رياضية متنوعة تنفذها الجمعية ضمن روزنامة الأنشطة والفعاليات المعتمدة"
