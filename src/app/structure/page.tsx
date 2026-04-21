@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -23,26 +22,7 @@ export default function StructurePage() {
         subtitle="الهيكل التنظيمي لجمعية مشاة الطائف يوضح تسلسل المسؤوليات والصلاحيات"
       />
 
-      {/* Official Organizational Structure Image */}
       <AnimatedSection delay={0.1}>
-        <div className="mt-12 bg-surface rounded-2xl p-6 md:p-8 border border-charcoal/5">
-          <div className="flex justify-center">
-            <div className="relative rounded-xl overflow-hidden border border-charcoal/10 shadow-sm bg-white p-4 max-w-3xl w-full">
-              <Image
-                src="/images/org-structure.jpeg"
-                alt="الهيكل التنظيمي لجمعية مشاة الطائف - يوضح التسلسل من الجمعية العمومية إلى مجلس الإدارة واللجان"
-                width={900}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Text fallback for accessibility */}
-      <AnimatedSection delay={0.2}>
         <div className="mt-8 bg-surface rounded-2xl p-8 border border-charcoal/5">
           <h3 className="text-lg font-bold text-charcoal mb-6 text-center">ملخص الهيكل التنظيمي</h3>
 

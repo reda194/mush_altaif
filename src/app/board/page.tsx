@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "أعضاء مجلس إدارة جمعية مشاة الطائف",
 };
 
+const leaders = boardMembers.filter((m) => m.fullSpeech);
+
 export default function BoardPage() {
   return (
     <Container className="pt-32 pb-20">
@@ -31,15 +33,29 @@ export default function BoardPage() {
         ))}
       </div>
 
-      <AnimatedSection delay={0.3}>
-        <div className="mt-16 bg-surface rounded-2xl p-8 border border-charcoal/5">
-          <h3 className="text-xl font-bold text-charcoal mb-4">كلمة رئيس مجلس الإدارة</h3>
-          <blockquote className="text-charcoal/70 leading-relaxed text-lg border-r-4 border-brand pr-6">
-            {boardMembers[0].quote}
-          </blockquote>
-          <p className="mt-4 font-bold text-charcoal">— {boardMembers[0].name}، {boardMembers[0].role}</p>
-        </div>
-      </AnimatedSection>
+      {/* Full speeches for president, VP, and advisor */}
+      <div className="mt-16 space-y-8">
+        {leaders.map((leader, index) => (
+          <AnimatedSection key={leader.name} delay={index * 0.15}>
+            <div className="bg-surface rounded-2xl p-8 border border-charcoal/5">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center text-brand font-bold text-lg shrink-0">
+                  {leader.name.charAt(0)}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-charcoal">كلمة {leader.role.split(" (")[0]}</h3>
+                  <p className="text-sm text-brand font-medium">{leader.name}</p>
+                </div>
+              </div>
+              <div
+                className="text-charcoal/70 leading-loose text-base border-r-4 border-brand pr-6 whitespace-pre-line"
+              >
+                {leader.fullSpeech}
+              </div>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
 
       {/* Board Formation Letter */}
       <AnimatedSection delay={0.4}>

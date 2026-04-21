@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FileText, ShieldCheck, Scale, BookOpen, Download, Calendar } from "lucide-react";
+import { FileText, ShieldCheck, Scale, BookOpen, Calendar, Lock, UserCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -51,30 +51,53 @@ export default function GovernancePage() {
         ))}
       </div>
 
-      {/* Downloadable Documents Section */}
+      {/* Locked Documents Section — requires membership */}
       <AnimatedSection delay={0.3}>
         <div className="mt-12 bg-surface rounded-2xl p-8 border border-charcoal/5">
-          <h3 className="text-xl font-bold text-charcoal mb-6">📄 الوثائق والتقارير</h3>
-          <p className="text-charcoal/60 text-sm mb-6">يمكنك تحميل الوثائق الرسمية والتقارير المالية المعتمدة</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="flex items-center gap-3 mb-2">
+            <h3 className="text-xl font-bold text-charcoal">الوثائق والتقارير</h3>
+            <span className="flex items-center gap-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full px-3 py-0.5 text-xs font-bold">
+              <Lock className="w-3 h-3" />
+              للأعضاء فقط
+            </span>
+          </div>
+          <p className="text-charcoal/60 text-sm mb-6">
+            يمكن الاطلاع على الوثائق الرسمية والتقارير المالية المعتمدة بعد التسجيل والدخول كعضو في الجمعية.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {documents.map((doc) => (
-              <a
+              <div
                 key={doc.title}
-                href={doc.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-all duration-200 group"
+                className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 opacity-60 cursor-not-allowed select-none"
+                aria-label={`${doc.title} — متاح للأعضاء المسجلين`}
               >
-                <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
-                  <doc.icon className="w-5 h-5 text-brand" />
+                <div className="w-10 h-10 bg-charcoal/5 rounded-lg flex items-center justify-center shrink-0">
+                  <doc.icon className="w-5 h-5 text-charcoal/30" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-bold text-charcoal text-sm truncate">{doc.title}</p>
-                  <p className="text-charcoal/50 text-xs truncate">{doc.desc}</p>
+                  <p className="font-bold text-charcoal/50 text-sm truncate">{doc.title}</p>
+                  <p className="text-charcoal/30 text-xs truncate">{doc.desc}</p>
                 </div>
-                <Download className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
-              </a>
+                <Lock className="w-4 h-4 text-charcoal/20 shrink-0" />
+              </div>
             ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 bg-brand/5 border border-brand/15 rounded-xl p-5">
+            <div className="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center shrink-0">
+              <UserCheck className="w-5 h-5 text-brand" />
+            </div>
+            <div className="flex-1 text-center sm:text-right">
+              <p className="font-bold text-charcoal text-sm">هل أنت عضو في الجمعية؟</p>
+              <p className="text-charcoal/60 text-xs mt-0.5">سجّل انضمامك للحصول على صلاحية الاطلاع على جميع الوثائق</p>
+            </div>
+            <a
+              href="/membership"
+              className="shrink-0 bg-brand text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
+            >
+              سجّل الآن
+            </a>
           </div>
         </div>
       </AnimatedSection>

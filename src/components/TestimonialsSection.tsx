@@ -6,7 +6,7 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: 'عبدالله العتيبي',
+    name: 'محمد النمري',
     role: 'عضو منذ 3 سنوات',
     route: 'مسار الهدا',
     rating: 5,
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'سارة خالد',
+    name: 'ليلى مسملي',
     role: 'مشاركة في الماراثون',
     route: 'ماراثون الطائف 2024',
     rating: 5,
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: 'محمد الزهراني',
+    name: 'فرحان القرني',
     role: 'قائد مسار',
     route: 'مسار الشفا الجبلي',
     rating: 5,
