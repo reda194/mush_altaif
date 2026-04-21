@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Download, FileText, MapPin } from "lucide-react";
+import { FileText, MapPin } from "lucide-react";
+import DocumentDownloadButton from "@/components/shared/DocumentDownloadButton";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -142,37 +143,26 @@ export default function AboutPage() {
         <div className="mt-12 bg-surface rounded-2xl p-8 border border-charcoal/5">
           <h3 className="text-xl font-bold text-charcoal mb-6">الوثائق الرسمية</h3>
           <div className="grid sm:grid-cols-2 gap-4">
-            <a
-              href="/docs/registration-decision.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-colors group"
-            >
-              <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
-                <FileText className="w-5 h-5 text-brand" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-bold text-charcoal text-sm">قرار التسجيل</p>
-                <p className="text-charcoal/50 text-xs">PDF — عرض الوثيقة</p>
-              </div>
-              <Download className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
-            </a>
-
-            <a
-              href="/docs/license-info.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-colors group"
-            >
-              <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
-                <FileText className="w-5 h-5 text-brand" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-bold text-charcoal text-sm">معلومات شهادة الترخيص</p>
-                <p className="text-charcoal/50 text-xs">PDF — عرض الوثيقة</p>
-              </div>
-              <Download className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
-            </a>
+            {[
+              { title: "قرار التسجيل",             href: "/docs/registration-decision.pdf" },
+              { title: "معلومات شهادة الترخيص",    href: "/docs/license-info.pdf" },
+            ].map((doc) => (
+              <DocumentDownloadButton
+                key={doc.title}
+                fileName={doc.title}
+                fileUrl={doc.href}
+                className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-colors group w-full text-right"
+              >
+                <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
+                  <FileText className="w-5 h-5 text-brand" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-charcoal text-sm">{doc.title}</p>
+                  <p className="text-charcoal/50 text-xs">PDF — تحميل الوثيقة</p>
+                </div>
+                <FileText className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
+              </DocumentDownloadButton>
+            ))}
           </div>
         </div>
       </AnimatedSection>
