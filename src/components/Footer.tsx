@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.jpeg" alt="شعار مشاة الطائف" className="w-8 h-8 rounded-full object-cover" />
+            <img src="/logo.jpeg" alt="شعار مشاة الطائف" className="w-20 h-12 rounded-xl object-contain" />
             <span className="text-xl font-bold text-white font-display">مشاة الطائف</span>
           </div>
           <p className="text-sm max-w-sm leading-relaxed mb-4">
