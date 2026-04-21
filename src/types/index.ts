@@ -2,6 +2,7 @@ export interface BoardMember {
   name: string;
   role: string;
   quote?: string;
+  fullSpeech?: string;
   image?: string;
 }
 

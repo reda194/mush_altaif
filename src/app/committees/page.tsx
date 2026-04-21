@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Users, FileText, ClipboardCheck, Megaphone, Wallet, Heart } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
@@ -33,24 +32,6 @@ export default function CommitteesPage() {
         subtitle="تعمل لجان الجمعية المتخصصة على تحقيق أهدافها الاستراتيجية بكفاءة واحترافية"
       />
 
-      {/* Official Committees Document */}
-      <AnimatedSection delay={0.1}>
-        <div className="mt-8 bg-surface rounded-2xl p-6 md:p-8 border border-charcoal/5">
-          <div className="flex justify-center">
-            <div className="relative rounded-xl overflow-hidden border border-charcoal/10 shadow-sm bg-white p-4 max-w-3xl w-full">
-              <Image
-                src="/images/committees.jpeg"
-                alt="جدول اللجان الأساسية لجمعية مشاة الطائف مع أسماء الأعضاء"
-                width={900}
-                height={600}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Committees Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {committees.map((committee, index) => (
           <AnimatedSection key={committee.name} delay={index * 0.1}>
