@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Download, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
+import DocumentDownloadButton from "@/components/shared/DocumentDownloadButton";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -61,21 +62,20 @@ export default function BoardPage() {
       <AnimatedSection delay={0.4}>
         <div className="mt-8 bg-surface rounded-2xl p-8 border border-charcoal/5">
           <h3 className="text-lg font-bold text-charcoal mb-4">الوثائق الرسمية</h3>
-          <a
-            href="/docs/board-formation-letter.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-colors group max-w-md"
+          <DocumentDownloadButton
+            fileName="خطاب تشكيل المجلس"
+            fileUrl="/docs/board-formation-letter.pdf"
+            className="flex items-center gap-4 bg-white rounded-xl p-4 border border-charcoal/10 hover:border-brand/30 hover:bg-brand/5 transition-colors group max-w-md w-full text-right"
           >
             <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
               <FileText className="w-5 h-5 text-brand" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-bold text-charcoal text-sm">خطاب تشكيل المجلس</p>
-              <p className="text-charcoal/50 text-xs">PDF — عرض الوثيقة</p>
+              <p className="text-charcoal/50 text-xs">PDF — تحميل الوثيقة</p>
             </div>
-            <Download className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
-          </a>
+            <FileText className="w-4 h-4 text-charcoal/30 group-hover:text-brand transition-colors shrink-0" />
+          </DocumentDownloadButton>
         </div>
       </AnimatedSection>
     </Container>

@@ -100,7 +100,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 relative z-50" aria-label="مشاة الطائف - الصفحة الرئيسية">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.jpeg" alt="شعار مشاة الطائف" className="w-10 h-10 rounded-full object-cover" />
+            <img src="/logo.jpeg" alt="شعار مشاة الطائف" className="w-20 h-12 rounded-xl object-contain" />
             <span className={`text-xl font-bold tracking-tight ${isSolid ? 'text-white' : 'text-white'}`}>
               مشاة الطائف
             </span>

@@ -5,20 +5,24 @@ import { motion, useInView } from 'framer-motion';
 
 function Counter({ from, to, duration = 2, label }: { from: number; to: number; duration?: number; label: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true, amount: 0.3 });
   const [count, setCount] = useState(from);
 
   useEffect(() => {
     if (!inView) return;
     let startTimestamp: number;
+    let rafId: number;
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(Math.floor(easeProgress * (to - from) + from));
-      if (progress < 1) window.requestAnimationFrame(step);
+      if (progress < 1) {
+        rafId = window.requestAnimationFrame(step);
+      }
     };
-    window.requestAnimationFrame(step);
+    rafId = window.requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
   }, [inView, from, to, duration]);
 
   return (
@@ -41,7 +45,7 @@ export default function StatsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 md:gap-20 items-center"
         >
@@ -67,7 +71,7 @@ export default function StatsSection() {
                 key={i}
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
                 className="flex items-baseline gap-3 py-5"
               >
