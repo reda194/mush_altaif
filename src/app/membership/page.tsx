@@ -73,7 +73,7 @@ export default function MembershipPage() {
             </div>
 
             <a
-              href="https://forms.google.com"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdgqa4JzEyR39CghiX8hjb0XEr5BbPGREw9rZU98noM1Ngc5Q/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full mt-6 bg-brand text-white py-3 rounded-xl font-bold text-center block hover:bg-brand-light transition-colors"

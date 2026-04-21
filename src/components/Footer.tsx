@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="روابط سريعة">
-          <h2 className="text-white font-semibold text-sm mb-4 font-display">روابط سريعة</h2>
+          <h6 className="text-white font-normal text-[10px] mb-4 font-display tracking-wide uppercase">روابط سريعة</h6>
           <ul className="space-y-3" role="list">
             {quickLinks.map((item) => (
               <li key={item.href}>
@@ -90,7 +90,7 @@ export default function Footer() {
         </nav>
 
         <nav aria-label="روابط الحوكمة">
-          <h2 className="text-white font-semibold text-sm mb-4 font-display">الحوكمة والسياسات</h2>
+          <h6 className="text-white font-normal text-[10px] mb-4 font-display tracking-wide uppercase">الحوكمة والسياسات</h6>
           <ul className="space-y-3" role="list">
             {governanceLinks.map((item) => (
               <li key={item.href}>

@@ -46,15 +46,6 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="relative z-20 text-right px-4 md:px-6 max-w-4xl mx-auto flex flex-col items-start">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-block mb-6 px-4 py-2 rounded-lg bg-brand/20 border border-brand/30 text-brand text-sm font-semibold tracking-wide"
-        >
-          أول جمعية مشي في المنطقة الغربية
-        </motion.span>
-
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
