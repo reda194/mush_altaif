@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, ArrowUpLeft } from "lucide-react";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
@@ -8,7 +9,18 @@ export default function TrailCard({ trail }: { trail: Trail }) {
   const basePath = trail.type === "hiking" ? "/hiking" : "/trails";
 
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col overflow-hidden">
+      {trail.image && (
+        <div className="relative aspect-video w-full overflow-hidden">
+          <Image
+            src={trail.image}
+            alt={trail.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
       <div className="p-5 flex flex-col flex-grow">
         <div className="flex items-center gap-2 mb-3">
           <Badge variant="brand">{trail.distance}</Badge>
