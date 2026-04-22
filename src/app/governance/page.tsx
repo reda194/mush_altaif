@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 const documents = [
   { title: "اللائحة الأساسية",              desc: "اللوائح والأنظمة الأساسية المنظمة لعمل الجمعية",  href: "/docs/bylaws.pdf",                icon: FileText },
+  { title: "المخاطبات الرسمية 2025",         desc: "المراسلات والخطابات الرسمية الصادرة عام 2025م",   href: "/docs/correspondence-2025.pdf",   icon: FileText },
   { title: "القوائم المالية 2024",           desc: "القوائم المالية المعتمدة لعام 2024م",             href: "/docs/financial-report-2024.pdf", icon: Calendar  },
   { title: "تقرير جمعية مشاة الطائف 2023",  desc: "التقرير السنوي الشامل لعام 2023م",               href: "/docs/annual-report-2023.pdf",    icon: BookOpen  },
   { title: "القوائم المالية 2022",           desc: "القوائم المالية المعتمدة لعام 2022م",             href: "/docs/financial-report-2022.pdf", icon: Calendar  },
