@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
@@ -41,6 +42,21 @@ export default async function TrailDetailPage({ params }: Props) {
           { label: trail.name },
         ]}
       />
+
+      {trail.image && (
+        <AnimatedSection>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8 shadow-lg">
+            <Image
+              src={trail.image}
+              alt={trail.name}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 80vw"
+              className="object-cover"
+            />
+          </div>
+        </AnimatedSection>
+      )}
 
       <AnimatedSection>
         <div className="mb-8">
