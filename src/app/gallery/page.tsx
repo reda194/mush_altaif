@@ -51,6 +51,12 @@ const galleryItems = [
   { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-16.jpeg" },
   { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-17.jpeg" },
   { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-18.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-19.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-20.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-21.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-22.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-23.jpeg" },
+  { title: "فعاليات جمعية مشاة الطائف", category: "فعاليات", image: "/images/gallery-new-24.jpeg" },
 ];
 
 export default function GalleryPage() {
