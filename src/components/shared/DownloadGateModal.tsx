@@ -32,14 +32,34 @@ export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }
     }, 300);
   };
 
-  const triggerDownload = () => {
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const triggerDownload = async () => {
+    try {
+      // Request file from API route (server-side — not in public/)
+      const res = await fetch('/api/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fileName: fileUrl }),
+      });
+
+      if (!res.ok) throw new Error('Download failed');
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+
+      // Extract clean filename for the download
+      const cleanName = fileUrl.replace(/^\/docs\//, '');
+      link.download = cleanName;
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch {
+      // If API route fails, show error
+      setStatus('error');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -47,6 +67,7 @@ export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }
     setStatus('sending');
 
     try {
+      // 1. Send user data via EmailJS
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -64,9 +85,11 @@ export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }
         EMAILJS_PUBLIC_KEY
       );
 
+      // 2. EmailJS succeeded → download file via API route
       setStatus('success');
-      triggerDownload();
+      await triggerDownload();
 
+      // 3. Auto-close after delay
       setTimeout(() => {
         handleClose();
       }, 2500);
