@@ -49,7 +49,10 @@ export default function ContactForm() {
         PUBLIC_KEY
       );
       setStatus("success");
-    } catch {
+    } catch (err) {
+      console.error("[ContactForm] EmailJS error:", err, {
+        SERVICE_ID, TEMPLATE_ID, hasPublicKey: !!PUBLIC_KEY,
+      });
       setStatus("error");
     }
   };
