@@ -48,7 +48,7 @@ export default function VolunteerPage() {
             انضم لفريق المتطوعين في جمعية مشاة الطائف وساهم في بناء مجتمع رياضي حيوي.
           </p>
           <a
-            href="https://forms.google.com"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdgqa4JzEyR39CghiX8hjb0XEr5BbPGREw9rZU98noM1Ngc5Q/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-3 rounded-xl font-bold hover:bg-white/90 transition-all"

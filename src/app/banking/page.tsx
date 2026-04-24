@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Building2, CreditCard } from "lucide-react";
+import { Building2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -35,15 +35,13 @@ export default function BankingPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 border border-charcoal/5 text-center">
-            <CreditCard className="w-8 h-8 text-brand mx-auto mb-3" />
-            <p className="text-charcoal/50 text-sm mb-1">رقم الحساب</p>
-            <p className="text-2xl font-bold text-charcoal tracking-wider" dir="ltr">
-              *** **** ****
-            </p>
-            <p className="text-charcoal/40 text-sm mt-2">
-              رقم الآيبان متاح بعد قبول طلب العضوية
-            </p>
+          <div className="bg-white rounded-xl p-4 border border-charcoal/5 text-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/رقم-حساب-الراجحي-للجمعية-2.jpeg"
+              alt="رقم حساب بنك الراجحي لجمعية مشاة الطائف"
+              className="w-full h-auto rounded-lg"
+            />
           </div>
 
           <div className="mt-6 text-center">
