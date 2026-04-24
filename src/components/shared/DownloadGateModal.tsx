@@ -93,7 +93,10 @@ export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }
       setTimeout(() => {
         handleClose();
       }, 2500);
-    } catch {
+    } catch (err) {
+      console.error('[DownloadGateModal] EmailJS error:', err, {
+        EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, hasPublicKey: !!EMAILJS_PUBLIC_KEY,
+      });
       setStatus('error');
     }
   };
