@@ -6,9 +6,10 @@ import Button from "@/components/ui/Button";
 import { CONTACT } from "@/lib/constants";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID  ?? "";
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
-const PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  ?? "";
+const SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID           ?? "";
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID
+                 ?? process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID          ?? "";
+const PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY           ?? "";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -35,12 +36,12 @@ export default function ContactForm() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          user_name: form.name,
-          user_email: form.email,
-          user_phone: form.phone || "غير محدد",
-          user_org: form.subject,
-          file_name: "رسالة تواصل",
-          download_time: new Date().toLocaleString("ar-SA", {
+          user_name:    form.name,
+          user_email:   form.email,
+          user_phone:   form.phone || "غير محدد",
+          user_subject: form.subject,
+          user_message: form.message,
+          send_time:    new Date().toLocaleString("ar-SA", {
             dateStyle: "full",
             timeStyle: "short",
           }),
