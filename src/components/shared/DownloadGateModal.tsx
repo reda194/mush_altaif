@@ -75,19 +75,26 @@ export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }
 
     try {
       // 1. Send user data via EmailJS
+      // Template variables: {{name}}, {{time}}, {{message}}
+      const downloadTime = new Date().toLocaleString('ar-SA', {
+        dateStyle: 'full',
+        timeStyle: 'short',
+      });
+
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          user_name:     form.name,
-          user_phone:    form.phone,
-          user_email:    form.email,
-          user_org:      form.org || 'غير محدد',
-          file_name:     fileName,
-          download_time: new Date().toLocaleString('ar-SA', {
-            dateStyle: 'full',
-            timeStyle: 'short',
-          }),
+          name:    form.name,
+          time:    downloadTime,
+          message: `طلب تحميل وثيقة\n` +
+                   `━━━━━━━━━━━━━━━━\n` +
+                   `الملف: ${fileName}\n` +
+                   `الاسم: ${form.name}\n` +
+                   `الجوال: ${form.phone}\n` +
+                   `البريد: ${form.email}\n` +
+                   `الجهة: ${form.org || 'غير محدد'}\n` +
+                   `الوقت: ${downloadTime}`,
         },
         EMAILJS_PUBLIC_KEY
       );
