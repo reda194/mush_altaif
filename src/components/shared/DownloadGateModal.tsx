@@ -17,6 +17,13 @@ const EMAILJS_SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID  ?? '';
 const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '';
 const EMAILJS_PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  ?? '';
 
+if (typeof window !== 'undefined' && (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY)) {
+  console.warn(
+    '[DownloadGateModal] EmailJS env vars missing — ensure NEXT_PUBLIC_EMAILJS_SERVICE_ID, ' +
+    'NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY are set in your deployment environment.'
+  );
+}
+
 export default function DownloadGateModal({ isOpen, onClose, fileName, fileUrl }: Props) {
   const [form, setForm] = useState({ name: '', phone: '', email: '', org: '' });
   const [status, setStatus] = useState<Status>('idle');
