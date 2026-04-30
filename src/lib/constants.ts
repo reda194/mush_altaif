@@ -77,7 +77,7 @@ export const CONTACT: ContactInfo = {
   phone: "0554713877",
   nationalNumber: "7037295750",
   email: "mushataltaif@gmail.com",
-  address: "شارع الفرزدق – قروي – الطائف",
+  address: "حي الخالدية، شارع أبي شجاع اللوزي، رقم المبنى 2853، الرمز البريدي 26521، الطائف",
   workHours: "الأحد – الأربعاء 8pm – 11am",
   socialLinks: [
     {
@@ -95,4 +95,4 @@ export const CONTACT: ContactInfo = {
   ],
 };
 
-export const TAIF_LOCATION = { lat: 21.4225, lng: 40.5136 };
+export const TAIF_LOCATION = { lat: 21.284842, lng: 40.373940 };
