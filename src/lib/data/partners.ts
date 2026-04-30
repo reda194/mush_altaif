@@ -17,7 +17,7 @@ export const partners: Partner[] = [
     website: "https://vision2030.gov.sa",
   },
   {
-    name: "أمانة محافظة الطائف",
+    name: "حافظة محافظة الطائف",
     description: "شريك في تطوير مسارات المشي والمرافق الرياضية",
   },
   {
