@@ -39,8 +39,8 @@ export default function MapSection() {
             lat={TAIF_LOCATION.lat}
             lng={TAIF_LOCATION.lng}
             zoom={12}
-            title="ممشى الردف - الطائف"
-            markerLabel="ممشى الردف الجديد"
+            title="ممشى حي مصلي العيد - الخالدية"
+            markerLabel="ممشى حي مصلي العيد بالخالدية"
           />
 
           <div className="absolute bottom-6 right-6 left-6 md:left-auto md:right-6 md:w-80">
@@ -48,7 +48,7 @@ export default function MapSection() {
               <div className="w-10 h-10 bg-rose-accent/10 rounded-full flex items-center justify-center mb-3">
                 <MapPin className="text-rose-accent" size={20} aria-hidden="true" />
               </div>
-              <h3 className="font-display text-lg font-bold mb-1">ممشى الردف الجديد</h3>
+              <h3 className="font-display text-lg font-bold mb-1">ممشى حي مصلي العيد بالخالدية</h3>
               <p className="text-charcoal/60 text-sm mb-4">نقطة التجمع الرئيسية للتدريبات الصباحية في محافظة الطائف.</p>
               <Link
                 href="/trails"
